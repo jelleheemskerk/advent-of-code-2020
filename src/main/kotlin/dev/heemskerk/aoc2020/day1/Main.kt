@@ -12,13 +12,16 @@ fun main() {
 
     println("Find the two entries that sum to 2020; what do you get if you multiply them together? " +
             "[${Day().solve(input)}]")
+
+    println("In your expense report, what is the product of the three entries that sum to 2020? " +
+            "[${Day().solve2(input)}]")
 }
 
 class Day {
-    fun solve(input: List<Int>): Int {
-        return input.associateWith { it }
+    fun solve(input: List<Int>) = input.associateWith { it }
             .filter { input.contains(2020 - it.value) }
             .map { it.value }
             .reduce { acc, i -> acc * i }
-    }
+
+    fun solve2(input: List<Int>) = 0
 }
